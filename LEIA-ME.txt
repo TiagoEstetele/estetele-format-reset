@@ -1,0 +1,20 @@
+EFR — estetele-format-reset
+
+Abra estetele-format-reset.exe nesta pasta. Ele é portátil e já inclui o runtime.
+Não é necessário instalar Python, Node.js ou .NET antes de abrir.
+
+1. Revise o Perfil do XML, que já seleciona remoções, Notepad++ e Desempenho Máximo.
+2. Reabra como administrador da mesma conta quando a seleção exigir.
+3. Clique em Validar configuração. Veja os testes, percentuais e eventuais bloqueios.
+4. Após a validação, Iniciar configurações principais será liberado.
+5. Confirme o resumo. Depois da aplicação, confira a verificação dos resultados.
+6. Histórico e restauração contém os relatórios e backups disponíveis.
+
+Validar não aplica ajustes. Para testar toda a interface sem consultar nem alterar
+o Windows, execute o aplicativo com o argumento --demo.
+
+Detalhes, compilação e limitações: README.md e docs/VALIDACAO.md.
+Código-fonte: https://github.com/TiagoEstetele/estetele-format-reset
+Licença MIT — Copyright 2026 Tiago Estetele.
+Versão experimental: aplicações reais ainda exigem validação em VM descartável.
+O ZIP de distribuição inclui documentação e avisos de licença do runtime .NET.

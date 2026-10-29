@@ -1,0 +1,28 @@
+<Application x:Class="Efr.App.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Application.Resources>
+    <SolidColorBrush x:Key="Ink" Color="#F2EEF9"/>
+    <SolidColorBrush x:Key="Muted" Color="#AAA0BD"/>
+    <SolidColorBrush x:Key="Accent" Color="#A879FF"/>
+    <SolidColorBrush x:Key="Surface" Color="#17121F"/>
+    <SolidColorBrush x:Key="Outline" Color="#352842"/>
+    <SolidColorBrush x:Key="Canvas" Color="#0D0A12"/>
+    <DrawingImage x:Key="EfrLogo">
+      <DrawingImage.Drawing><DrawingGroup>
+        <GeometryDrawing Brush="#A879FF" Geometry="M 2,4 L 43,4 39,14 15,14 15,27 35,27 31,37 15,37 15,50 43,50 39,60 2,60 Z"/>
+        <GeometryDrawing Brush="#F2EEF9" Geometry="M 51,60 L 51,29 45,29 45,20 51,20 51,15 C 51,5 58,0 68,0 L 78,0 78,10 70,10 C 64,10 62,12 62,17 L 62,20 76,20 72,29 62,29 62,60 Z"/>
+        <GeometryDrawing Brush="#F2EEF9" Geometry="M 81,60 L 81,20 92,20 92,27 C 96,21 102,19 110,20 L 110,31 C 99,29 92,34 92,43 L 92,60 Z"/>
+        <GeometryDrawing Brush="#7942DC" Geometry="M 117,49 L 129,49 125,60 113,60 Z"/>
+      </DrawingGroup></DrawingImage.Drawing>
+    </DrawingImage>
+    <BooleanToVisibilityConverter x:Key="BoolVisibility"/>
+    <Style TargetType="ScrollBar"><Setter Property="Width" Value="10"/><Setter Property="Background" Value="#100C16"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ScrollBar"><Grid Background="{TemplateBinding Background}"><Track x:Name="PART_Track" IsDirectionReversed="True"><Track.DecreaseRepeatButton><RepeatButton Command="ScrollBar.PageUpCommand" Opacity="0"/></Track.DecreaseRepeatButton><Track.Thumb><Thumb><Thumb.Template><ControlTemplate TargetType="Thumb"><Border Background="#59416D" CornerRadius="4" Margin="2"/></ControlTemplate></Thumb.Template></Thumb></Track.Thumb><Track.IncreaseRepeatButton><RepeatButton Command="ScrollBar.PageDownCommand" Opacity="0"/></Track.IncreaseRepeatButton></Track></Grid></ControlTemplate></Setter.Value></Setter></Style>
+    <Style TargetType="Window"><Setter Property="FontFamily" Value="Segoe UI"/><Setter Property="FontSize" Value="13"/><Setter Property="Foreground" Value="{StaticResource Ink}"/><Setter Property="Background" Value="{StaticResource Canvas}"/></Style>
+    <Style TargetType="TextBlock"><Setter Property="TextWrapping" Value="Wrap"/><Setter Property="Foreground" Value="{StaticResource Ink}"/></Style>
+    <Style TargetType="TextBox"><Setter Property="Foreground" Value="{StaticResource Ink}"/><Setter Property="Background" Value="#21182E"/><Setter Property="BorderBrush" Value="{StaticResource Outline}"/><Setter Property="CaretBrush" Value="{StaticResource Accent}"/><Setter Property="Padding" Value="8"/><Setter Property="SelectionBrush" Value="#693EAA"/></Style>
+    <Style TargetType="CheckBox"><Setter Property="Foreground" Value="{StaticResource Ink}"/><Setter Property="Cursor" Value="Hand"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="CheckBox"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="20"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><Border x:Name="Box" Width="16" Height="16" BorderThickness="1" BorderBrush="#75658A" Background="#110C1A" CornerRadius="4" VerticalAlignment="Top" Margin="0,1,0,0"><Path x:Name="Check" Data="M 3,7 L 6,10 12,3" Stroke="White" StrokeThickness="2" Visibility="Collapsed"/></Border><ContentPresenter Grid.Column="1" Margin="7,0,0,0" RecognizesAccessKey="True"/></Grid><ControlTemplate.Triggers><Trigger Property="IsChecked" Value="True"><Setter TargetName="Box" Property="Background" Value="#8B4CF3"/><Setter TargetName="Box" Property="BorderBrush" Value="#B38AFF"/><Setter TargetName="Check" Property="Visibility" Value="Visible"/></Trigger><Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.4"/></Trigger><Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Box" Property="BorderBrush" Value="White"/><Setter TargetName="Box" Property="BorderThickness" Value="2"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style>
+    <Style TargetType="Button">
+      <Setter Property="Padding" Value="14,9"/><Setter Property="Margin" Value="0,0,8,0"/><Setter Property="Background" Value="#21182E"/><Setter Property="Foreground" Value="{StaticResource Ink}"/><Setter Property="BorderBrush" Value="#443254"/><Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="Frame" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="7" Padding="{TemplateBinding Padding}"><ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Frame" Property="BorderBrush" Value="#A879FF"/><Setter TargetName="Frame" Property="Opacity" Value="0.9"/></Trigger><Trigger Property="IsEnabled" Value="False"><Setter TargetName="Frame" Property="Opacity" Value="0.45"/></Trigger><Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Frame" Property="BorderBrush" Value="#D8C1FF"/><Setter TargetName="Frame" Property="BorderThickness" Value="2"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter>
+    </Style>
+  </Application.Resources>
+</Application>

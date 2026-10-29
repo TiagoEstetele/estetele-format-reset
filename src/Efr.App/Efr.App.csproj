@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>estetele-format-reset</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>../../assets/efr.ico</ApplicationIcon>
+    <Version>0.1.0</Version>
+    <Authors>Tiago Estetele</Authors>
+    <Description>Personalização pós-instalação do Windows 11 com validação e histórico.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/TiagoEstetele/estetele-format-reset</RepositoryUrl>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <PublishTrimmed>false</PublishTrimmed>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="../Efr.Core/Efr.Core.csproj" /></ItemGroup>
+  <ItemGroup><Resource Include="../../assets/efr.ico" Link="efr.ico" /></ItemGroup>
+</Project>

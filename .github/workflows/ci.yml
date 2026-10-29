@@ -1,0 +1,54 @@
+name: Windows build and tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    runs-on: windows-2025
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_NOLOGO: '1'
+    steps:
+      - uses: actions/checkout@v6.1.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v5.4.0
+        with:
+          global-json-file: global.json
+      - name: Build, isolated tests, simulated UI and package
+        run: ./tools/build.ps1
+      - name: Test reports and simulated screenshots
+        if: always()
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: validation-reports
+          path: |
+            artifacts/test-results.txt
+            artifacts/ui-check/**/*.png
+            artifacts/ui-check/**/ui-results.txt
+            artifacts/ui-check/**/ui-failure.txt
+          retention-days: 14
+      - name: Portable package
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: estetele-format-reset-win-x64
+          path: |
+            dist/estetele-format-reset-win-x64.zip
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14
