@@ -223,6 +223,7 @@ Para reportar um bug, informe versão do EFR, build/edição do Windows, modo no
 ## Contribuir, versionar e licença
 
 - [Guia de contribuição](CONTRIBUTING.md)
+- [Identidade, autorização e credenciais](docs/AUTENTICACAO.md)
 - [Versionar e publicar no GitHub](docs/GITHUB.md)
 - [Resultados, limites e roteiro de VM](docs/VALIDACAO.md)
 - [Changelog](CHANGELOG.md)
