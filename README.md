@@ -22,7 +22,7 @@ O EFR ajuda a configurar um Windows já instalado. **Não formata discos, não r
 
 ## Download e requisitos
 
-Quando houver uma versão publicada, baixe o **ZIP do aplicativo na área Releases** do repositório `TiagoEstetele/estetele-format-reset`. O ZIP automático **Source code** contém o código-fonte e não o programa compilado. A existência deste README não significa que já há uma Release disponível.
+Baixe o **[ZIP do aplicativo na Release v0.1.0-preview.1](https://github.com/TiagoEstetele/estetele-format-reset/releases/tag/v0.1.0-preview.1)**. Esse é um pré-lançamento experimental para avaliação. O ZIP automático **Source code** contém o código-fonte e não o programa compilado.
 
 Extraia `estetele-format-reset-win-x64.zip` em uma pasta gravável e abra `estetele-format-reset.exe`. Não é necessário instalar o .NET, Python, Node ou PowerShell 7. O pacote inclui o runtime .NET e os avisos de licença de seus componentes. O executável tem aproximadamente **134 MiB** por incluir o runtime.
 
@@ -156,7 +156,7 @@ cd estetele-format-reset
 .\tools\build.ps1
 ```
 
-O comando de clone estará disponível após a primeira publicação do repositório. Se o SDK estiver em um caminho próprio, use `./tools/build.ps1 -Dotnet "C:\SDK\dotnet.exe"`. Não é preciso executar o build como administrador.
+Se o SDK estiver em um caminho próprio, use `./tools/build.ps1 -Dotnet "C:\SDK\dotnet.exe"`. Não é preciso executar o build como administrador.
 
 O script restaura dependências, executa a suíte isolada, publica o `.exe`, testa a interface em simulação e empacota os arquivos. Saídas:
 
@@ -184,7 +184,7 @@ dotnet run --project tests/Efr.Tests/Efr.Tests.csproj -c Release -- --native-rea
 
 A suíte é um programa de testes próprio; **`dotnet test` não a executa**. O diagnóstico nativo não faz parte do CI, não aplica/restaura ajustes e identifica consultas que exigem elevação como pendentes.
 
-O workflow em `.github/workflows/ci.yml` executa build, testes isolados, interface simulada e empacotamento em Windows a cada push em `main` ou pull request. Publica artefatos temporários de teste; **não publica uma Release automaticamente**. O primeiro resultado remoto só existirá após enviar o repositório ao GitHub.
+O workflow em `.github/workflows/ci.yml` executa build, testes isolados, interface simulada e empacotamento em Windows a cada push em `main` ou pull request. Publica artefatos temporários de teste; **não publica uma Release automaticamente**. O [CI do código do primeiro pré-lançamento passou](https://github.com/TiagoEstetele/estetele-format-reset/actions/runs/40908170599).
 
 ### Estrutura
 

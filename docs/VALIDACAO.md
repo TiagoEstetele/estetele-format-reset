@@ -16,7 +16,7 @@ Ambiente de desenvolvimento: Windows x64. SDK .NET 10.0.403 obtido da Microsoft 
 
 Resultados locais ficam em `artifacts/test-results.txt`, `artifacts/native-readonly.txt` e `artifacts/ui-check/`. O resultado anterior às correções foi preservado em `artifacts/test-results-before-review-fixes.txt`. Esses arquivos são ignorados pelo Git. Duas telas sintéticas são copiadas para `docs/images/` para ilustrar o README. A geração dos PNGs não demonstra compatibilidade das alterações com o Windows real.
 
-O script `tools/build.ps1` executa a suíte, publica, testa o executável pelo fixture WPF e gera ZIP/SHA-256. O workflow do GitHub repete esse fluxo; sua execução remota depende do envio do repositório e não foi presumida como aprovada pelo teste local.
+O script `tools/build.ps1` executa a suíte, publica, testa o executável pelo fixture WPF e gera ZIP/SHA-256. O mesmo fluxo passou em uma cópia limpa dos arquivos versionados e no [GitHub Actions, commit 1b4b0c0](https://github.com/TiagoEstetele/estetele-format-reset/actions/runs/40908170599). O ZIP extraído em caminho com espaços/acentos também passou pelo teste WPF, e seu executável teve hash idêntico ao arquivo publicado localmente. O resultado remoto foi confirmado pela conclusão de todas as etapas do job, não inferido dos testes locais.
 
 ## O que não foi validado em uma VM
 

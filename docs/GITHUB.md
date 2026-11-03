@@ -4,7 +4,9 @@ Destino configurado: `https://github.com/TiagoEstetele/estetele-format-reset.git
 
 O repositório Git local usa a branch `main`, autor Tiago Estetele e o e-mail informado pelo mantenedor. Nome/e-mail em commits públicos também ficam públicos. Uma configuração local do Git não cria o repositório no GitHub e não autentica a conta.
 
-## Primeira publicação
+## Primeira publicação (referência)
+
+O repositório já foi criado e os commits iniciais foram publicados. Esta seção documenta o procedimento para reproduzir a configuração em um fork ou novo projeto; para continuar neste repositório, use a seção **Próximas versões**.
 
 1. Entre no GitHub com `TiagoEstetele` e crie um repositório **público** chamado `estetele-format-reset`. Deixe-o vazio: README, licença e `.gitignore` já existem neste projeto.
 2. Na pasta do projeto, confira `git status` e `git remote -v`.
